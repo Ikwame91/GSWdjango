@@ -4,8 +4,5 @@ from django.http import HttpResponse
 
 # http request and show som stuff on our website
 
-def index(response):
-    return HttpResponse("<h1>Hello World of coders</h1>")
-
-def f1(response):
-    return HttpResponse("<h1>Do You eat Bread Baby girl</h1>")
+def index(response, id):
+    return HttpResponse("<h1>%s</h1>" %id)
