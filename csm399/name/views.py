@@ -28,3 +28,8 @@ def index(response):
 
 def kwame(response):
     return HttpResponse("<h1> He's a boy who likes walking</h1>")
+
+
+def main(response):
+    template = loader.get_template('main.html')
+    return HttpResponse(template.render())
