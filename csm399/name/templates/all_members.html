@@ -1,4 +1,27 @@
-<!DOCTYPE html>
+{% extends "master.html"%}
+
+{% block title %}
+My Tennis Club -List of all memebers
+
+
+
+{% endblock  %}
+
+{% block content %}
+<h1>
+    Members
+</h1>
+<ul>
+    {%for n in mynames%}
+    <li>
+        <a href="details/{{n.id}}">{{n.firstname}}{{n.lastname}}</a>
+    </li>
+    {% endfor %}
+</ul>
+{% endblock  %}
+
+
+{% comment %} <!DOCTYPE html>
 <html>
     <head>
         <title>The Members</title>
@@ -18,4 +41,4 @@
         </ul>
 
     </body>
-</html>
+</html> {% endcomment %}
