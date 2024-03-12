@@ -1,12 +1,19 @@
 <!DOCTYPE html>
 <html>
+    <head>
+        <title>The Members</title>
+    </head>
     <body>
-
+        <head>
+            <title>The Members</title>
+        </head>
         <h1>Members</h1>
 
         <ul>
             {% for n in mynames %}
-            <li>{{ n.firstname }} {{ n.lastname }}</li>
+            <li><a
+                    href="details/{{n.id}}">{{n.firstname}}{{n.lastname}}</a></li>
+            <!-- <li > <a href="details/{{ n.id}}"></a>{{ n.firstname }} {{ n.lastname }}</li> -->
             {% endfor %}
         </ul>
 

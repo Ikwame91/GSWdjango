@@ -12,6 +12,15 @@ def names(request):
     }
     return HttpResponse(template.render(context,request))
 
+def details(request, id):
+    myname = Memeber.objects.get(id=id)
+    template = loader.get_template("details.html")
+    context={
+        'myname': myname,
+    
+    }
+    return HttpResponse(template.render(context,request))
+
 
 def index(response):
     template = loader.get_template('index.html')
