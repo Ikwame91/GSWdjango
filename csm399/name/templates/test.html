@@ -22,7 +22,17 @@
   </table>
  {% endcomment %}
 
- <table border='1'>
+ {% comment %} <table border='1'>
+    {% for n in mymembers%}
+    <tr>
+        <td>{{n}}</td>
+    </tr>
+    {% endfor %}
+</table>
+     {% endcomment %}
+
+ 
+  <table border='1'>
     <tr>
       <th>ID</th>
       <th>Firstname</th>
@@ -36,6 +46,5 @@
       </tr>
     {% endfor %}
   </table>
-  
 </body>
 </html>
