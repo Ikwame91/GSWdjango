@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<body>
+    {% comment %} {% for x in members %}
+  <h1>{{ x.id }}</h1>
+  <p>
+    {{ x.firstname }}
+    {{ x.lastname }}
+  </p>
+{% endfor %}   {% endcomment %}
+
+
+{% comment %}
+<ul>
+ {% for m in mymembers reversed%}
+ <li>{{m.firstname}}</li>
+ {% endfor %}
+</ul> {% endcomment %}
+<ul>
+    {% for x in fruits %}
+      <li>{{ forloop.counter }}</li>
+    {% endfor %}
+  </ul>
+
+  <ul>
+    {% for x in fruits %}
+      <li>{{ forloop.counter0 }}</li>
+    {% endfor %}
+  </ul>
+  
+  {% for x in fruits %}
+    <li
+      {% if forloop.first %}
+        style='background-color:lightblue;'
+      {% endif %}
+    >{{ x }}</li>
+  {% endfor %}
+<p></p>
+  forloop.revcounter
+The current iteration if you start at the end and count backwards, ending up at 1.
+<ul>
+    {% for x in fruits %}
+      <li>{{ forloop.revcounter }}</li>
+    {% endfor %}
+  </ul>
+
+  <p>
+    forloop.revcounter0
+The current iteration if you start at the end and count backwards, ending up at 0.
+
+<ul>
+  {% for x in fruits %}
+    <li>{{ forloop.revcounter0 }}</li>
+  {% endfor %}
+</ul> 
+  </p>
+
+{% comment %}
+Variables in Include
+You can send variables into the template by using the with keyword.
+
+In the include file, you refer to the variables by using the {{ variablename }} syntax:
+
+Example
+templates/mymenu.html:
+
+<div>HOME | {{ me }} | ABOUT | FORUM | {{ sponsor }}</div>
+
+
+templates/template.html:
+
+<!DOCTYPE html>
+<html>
+<body>
+
+{% include "mymenu.html" with me="TOBIAS" sponsor="W3SCHOOLS" %}
+
+<h1>Welcome</h1>
+
+<p>This is my webpage</p> {% endcomment %}
+
+</body>
+</html>
+<p>In views.py you can see how to import and fetch members from the database.</p>
+
+</body>
+</html>
