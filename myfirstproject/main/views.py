@@ -5,6 +5,5 @@ from .models import TodoList, Item
 
 # http request and show som stuff on our website
 
-def index(response, id):
-    ls = TodoList.objects.get(id=id)
-    return HttpResponse("<h1>%s</h1>" %ls.title)
+def index(response):
+    return HttpResponse("hello")
