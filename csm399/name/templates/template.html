@@ -1,5 +1,9 @@
+
+{% load static%}
+
 <!DOCTYPE html>
 <html>
+    <link rel="stylesheet" href="{% static 'myglobal.css' %}">
 <body>
     {% comment %} {% for x in members %}
   <h1>{{ x.id }}</h1>
