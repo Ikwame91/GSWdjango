@@ -1,8 +1,16 @@
 from django.db import models
 
 # Create your models here.
-class Member(models.Model):
-    firstname = models.CharField(max_length=225)
-    lastname = models.CharField(max_length=225)
-    phone = models.IntegerField(null=True)
-    joined_date = models.DateField(null=True)
+class ToDoList(models.Model):
+    name = models.CharField(max_length=225)
+   
+    def __str__(self) :
+        return self.name
+    
+class Item(models.Model):
+    todolist = models.ForeignKey(ToDoList,on_delete=models.CASCADE)
+    text =models.CharField(max_length=225)
+    complete = models.BooleanField()
+
+    def __str__(self):
+        return self.text
