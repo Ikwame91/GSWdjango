@@ -5,5 +5,11 @@ from .models import TodoList, Item
 
 # http request and show som stuff on our website
 
-def index(response):
+
+def index(response, id):
+    ls = TodoList.objects.get(id=id)
+    item = ls.item_set.get(id=id)
+    return HttpResponse()
+
+def home(response):
     return HttpResponse("hello")
