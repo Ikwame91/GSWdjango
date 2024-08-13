@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+  {% comment %} <ul>
+    {% for x in fruits %}
+      <li
+        {% if forloop.first %}
+          style='background-color:lightblue;'
+        {% endif %}
+      >{{ x }}</li>
+    {% endfor %}
+  </ul> {% endcomment %}
+
+  {% for x in mymembers  %}
+    <h1> {{x.id}}</h1>
+    <p>
+      {{ x.firstname }}
+      {{ x.lastname }}
+    </p>
+  {% endfor %}
+
+
+
+  {% for x in mymembers reversed %}
+    <h1> {{x.id}}</h1>
+    <p>
+      {{ x.firstname }}
+      {{ x.lastname }}
+    </p>
+  {% endfor %}
+
+  {% include 'footer.html' %}
+  {% include "mymenu.html" with me="NANA KWAME" sponsor="W3SCHOOLS" %}
+
+  
+  <p>This is my webpage</p>
+
+</body>
+</html>
