@@ -1,0 +1,29 @@
+<p>
+
+
+    Django has its own way of specifying SQL statements and WHERE clauses.
+
+    To make specific where clauses in Django, use "Field lookups".
+    
+    Field lookups are keywords that represents specific SQL keywords.
+
+
+    Use the __startswith keyword:
+
+    .filter(firstname__startswith='L');
+    Is the same as the SQL statement:
+    
+    WHERE firstname LIKE 'L%'
+
+<h1>
+Field Lookups Syntax
+All Field lookup keywords must be specified with the fieldname, followed by two(!) underscore characters, and the keyword.
+
+In our Member model, the statement would be written like this:
+
+Example
+Return the records where firstname starts with the letter 'L':
+
+mydata = Member.objects.filter(firstname__startswith='L').values()
+</h1>
+</p>

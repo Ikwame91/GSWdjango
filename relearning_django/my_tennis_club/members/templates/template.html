@@ -1,7 +1,26 @@
+{% load static %}
 <!DOCTYPE html>
 <html>
+<link rel="stylesheet" href=" {% static "myglobal.css" %}">
 <body>
 
+
+<table border ='1'>
+  <tr>
+    <th>ID</th>
+    <th>FirstName</th>
+    <th>Lastname</th>
+  </tr>
+  {% for x in mymembers  %}
+  <tr>
+    <td> {{x.id}}</td>
+    <td>{{x.firstname}}</td>
+    <td> {{x.lastname}}</td>
+  </tr>
+  {% endfor %}
+
+
+</table>
   {% comment %} <ul>
     {% for x in fruits %}
       <li
@@ -12,7 +31,7 @@
     {% endfor %}
   </ul> {% endcomment %}
 
-  {% for x in mymembers  %}
+  {% comment %} {% for x in mymembers  %}
     <h1> {{x.id}}</h1>
     <p>
       {{ x.firstname }}
@@ -28,7 +47,9 @@
       {{ x.firstname }}
       {{ x.lastname }}
     </p>
-  {% endfor %}
+  {% endfor %} {% endcomment %}
+
+
 
   {% include 'footer.html' %}
   {% include "mymenu.html" with me="NANA KWAME" sponsor="W3SCHOOLS" %}
